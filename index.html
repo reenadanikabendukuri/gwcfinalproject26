@@ -6,12 +6,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="pomodoro">
+    <div class="title">
+      <h1 style="color: #FCF6F5;">Pomodoro Timer</h1>
+      <h2 style="color:#FCF6F5;">⋆｡‧˚ʚ🍅ɞ˚‧｡⋆</h2>
+    </div>
+ 
+    <div class="completed">
+      <h3 style="color: #000000;">Completed Pomodoros: <span id="session-count">0</span></h3> 
+    </div>
+ 
+    <div class="modebuttons">
+      <button class="tab active" data-mode="pomodoro">Focus</button>
+      <button class="tab" data-mode="short">Short Break</button>
+      <button class="tab" data-mode="long">Long Break</button>
+    </div>
+ 
+    <div class="focus" id="time-display">25:00</div>
+ 
+    <div class="start_stop_restart">
+      <button class="btn-action" id="start-btn">START</button>
+      <button class="btn-action" id="pause-btn">PAUSE</button>
+      <button class="restart" id="reset-btn">RESTART</button>
+    </div>
 
-  <div class="container">
-    <h1>This is Page 1</h1>
-    <button onclick="goToPage2()">Go to Page 2</button>
+    <div class="credits"> 
+      <h7 style="color: #000000;">Pomodoro Timer By Reena Danika Bendukuri for GWC</h7>
+
+
   </div>
 
   <script src="script.js"></script>
+ 
 </body>
 </html>
