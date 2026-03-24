@@ -13,8 +13,16 @@ button
   cursor: pointer;
 }
 
-h1 {
+h1 
+{
   font-family: "Lucida Console", "Courier New", monospace;
   -webkit-text-stroke-width: 1.7px;
   -webkit-text-stroke-color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;    /* Vertical */
+  height: 83vh;          /* Optional: full viewport height */
 }

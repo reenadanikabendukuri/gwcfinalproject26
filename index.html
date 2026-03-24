@@ -6,37 +6,56 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
   <div class="pomodoro">
     <div class="title">
-      <h1 style="color: #FCF6F5;">Pomodoro Timer</h1>
-      <h2 style="color:#FCF6F5;">⋆｡‧˚ʚ🍅ɞ˚‧｡⋆</h2>
+      <h1 style="color: #FCF6F5; transform: translateX(77px);" >Pomodoro Timer</h1>
+      <h2 style="color: #FCF6F5; transform: translateX(125px);">⋆｡‧˚ʚ🍅ɞ˚‧｡⋆</h2>
     </div>
  
     <div class="completed">
-      <h3 style="color: #000000;">Completed Pomodoros: <span id="session-count">0</span></h3> 
+      <h3 style="color: #000000; transform: translateX(85px);">Completed Pomodoros: <span id="session-count">0</span></h3> 
     </div>
  
     <div class="modebuttons">
-      <button class="tab active" data-mode="pomodoro">Focus</button>
-      <button class="tab" data-mode="short">Short Break</button>
-      <button class="tab" data-mode="long">Long Break</button>
+      <button class="tab active" data-mode="pomodoro" style="color: #000000; transform: translateX(7px);" >Focus</button>
+      <button class="tab" data-mode="short" style="color: #000000; transform: translateX(7px);">Short Break</button>
+      <button class="tab" data-mode="long" style="color: #000000; transform: translateX(7px);">Long Break</button>
     </div>
  
-    <div class="focus" id="time-display">25:00</div>
+    <div class="focus" id="time-display" style="color: #F5F0CD; transform: translateX(107px); font-family: 'Lucida Console', 'Courier New', monospace; font-size: 70px; font-weight: bold;">
+      25:00
+    </div>
  
     <div class="start_stop_restart">
-      <button class="btn-action" id="start-btn">START</button>
-      <button class="btn-action" id="pause-btn">PAUSE</button>
-      <button class="restart" id="reset-btn">RESTART</button>
+      <button class="btn-action" id="start-btn" style= "transform: translateX(45px)">START</button>
+      <button class="btn-action" id="pause-btn" style= "transform: translateX(45px)">PAUSE</button>
+      <button class="restart" id="reset-btn" style= "transform: translateX(45px)">RESTART</button>
     </div>
+    
+    <h4 style = "transform: translateY(300px) translateX(90px)">click to change background</h3>
+      <button onclick="changeColor('#B2C9AD')"; style = "transform: translateY(300px) translateX(70px)">Green</button>
+      <button onclick="changeColor('#e8dfce')"; style = "transform: translateY(300px) translateX(70px)">Cream</button>
+      <button onclick="changeColor('#7b9acc')"; style = "transform: translateY(300px) translateX(70px)">Reset</button>
+
+    <script>
+      function changeColor(color) 
+      {
+        document.body.style.backgroundColor = color;
+        const timerColors = {
+          '#B2C9AD':'#FFD5D5',
+          '#e8dfce':'#7e8e65',
+          '#7b9acc':'#F5F0CD'
+        };
+        document.getElementById('time-display').style.color = timerColors[color];
+      }
+    </script>
 
     <div class="credits"> 
-      <h7 style="color: #000000;">Pomodoro Timer By Reena Danika Bendukuri for GWC</h7>
-
+      <p style="color: #000000; transform: translateY(300px) translateX(3px)">Pomodoro Timer By Reena Danika Bendukuri for GWC</p>
+    </div>
 
   </div>
-
-  <script src="script.js"></script>
- 
+<script src="script.js"></script>
 </body>
 </html>
