@@ -1,5 +1,6 @@
 body 
 {
+  display: flex;
   font-family: "Lucida Console", "Courier New", monospace;
   background-color: #7b9acc;
 }
@@ -26,3 +27,134 @@ h1
   align-items: center;    /* Vertical */
   height: 83vh;          /* Optional: full viewport height */
 }
+
+
+.app-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* ── Task panel ── */
+.task-panel {
+  width: 210px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(4px);
+  border-left: 1.5px solid rgba(255,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 0.75rem;
+  gap: 0.75rem;
+  min-height: 100vh;
+}
+
+.task-panel h2 {
+  color: #FCF6F5;
+  font-size: 1rem;
+  -webkit-text-stroke: 0.8px black;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.task-panel h2 span.count {
+  background: rgba(0,0,0,0.2);
+  color: #FCF6F5;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  -webkit-text-stroke: 0;
+}
+
+.task-input-row {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  font-size: 9px;        /* ← smaller input text */
+  background: rgba(255,255,255,0.75);
+  border: 1.5px solid rgba(0,0,0,0.2);
+  outline: none;
+  color: #222;
+}
+
+.task-input:focus {
+  border-color: rgba(0,0,0,0.5);
+  background: #fff;
+}
+
+.add-btn {
+  padding: 6px 10px;
+  background: #FCF6F5;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.add-btn:hover { background: #f0e8e7; }
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.7);
+  padding: 6px 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.task-item.done .task-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-check {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: #7b9acc;
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 10px;       /* ← smaller task text */
+  color: #222;
+  word-break: break-word;
+}
+
+.task-del {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  font-size: 14px;
+  padding: 0 2px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.task-del:hover { color: #c00; }

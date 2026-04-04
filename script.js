@@ -98,3 +98,43 @@ tabs.forEach(tab => {
 });
  
 renderTime();
+
+let tasks = [];
+const taskList = document.getElementById('task-list');
+const taskInput = document.getElementById('task-input');
+const taskCount = document.getElementById('task-count');
+
+function renderTasks() 
+{
+  taskList.innerHTML = '';
+  tasks.forEach((task, i) => 
+  {
+    const item = document.createElement('div');
+    item.className = 'task-item' + (task.done ? ' done' : '');
+    item.innerHTML = `
+      <input type="checkbox" class="task-check" ${task.done ? 'checked' : ''} data-i="${i}" />
+      <span class="task-text">${task.text}</span>
+      <button class="task-del" data-i="${i}">&#x2715;</button>`;
+    taskList.appendChild(item);
+  });
+  taskCount.textContent = tasks.filter(t => !t.done).length;
+}
+
+function addTask() 
+{
+  const text = taskInput.value.trim();
+  if (!text) return;
+  tasks.push({ text, done: false });
+  taskInput.value = '';
+  renderTasks();
+}
+
+document.getElementById('add-task-btn').addEventListener('click', addTask);
+taskInput.addEventListener('keydown', e => { if (e.key === 'Enter') addTask(); });
+
+taskList.addEventListener('click', e => 
+{
+  const i = e.target.dataset.i;
+  if (e.target.classList.contains('task-check')) { tasks[i].done = e.target.checked; renderTasks(); }
+  if (e.target.classList.contains('task-del')) { tasks.splice(i, 1); renderTasks(); }
+});
